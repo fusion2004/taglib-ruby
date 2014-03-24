@@ -9,7 +9,7 @@ def error msg
   abort
 end
 
-find_library("tag", nil, "/app/vendor/taglib/lib")
+find_library("tag", nil, "vendor/taglib/lib")
 dir_config('tag')
 
 # When compiling statically, -lstdc++ would make the resulting .so to
