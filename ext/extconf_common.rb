@@ -12,7 +12,7 @@ end
 puts ENV.inspect
 puts Dir.pwd
 find_library("tag", nil, ENV["GEM_HOME"]+ "/../../../taglib/lib")
-dir_config('tag')
+dir_config("tag", ENV["GEM_HOME"]+ "/../../../taglib/include", ENV["GEM_HOME"]+ "/../../../taglib/lib")
 
 # When compiling statically, -lstdc++ would make the resulting .so to
 # have a dependency on an external libstdc++ instead of the static one.
