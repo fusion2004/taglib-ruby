@@ -9,8 +9,6 @@ def error msg
   abort
 end
 
-puts ENV.inspect
-puts Dir.pwd
 find_library("tag", nil, ENV["GEM_HOME"]+ "/../../../taglib/lib")
 dir_config("tag", ENV["GEM_HOME"]+ "/../../../taglib/include", ENV["GEM_HOME"]+ "/../../../taglib/lib")
 
