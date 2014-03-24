@@ -9,7 +9,7 @@ def error msg
   abort
 end
 
-dir_config('tag')
+dir_config('tag', '/app/vendor/taglib/include', '/app/vendor/taglib/lib')
 
 # When compiling statically, -lstdc++ would make the resulting .so to
 # have a dependency on an external libstdc++ instead of the static one.
