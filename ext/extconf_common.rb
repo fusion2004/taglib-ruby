@@ -9,7 +9,8 @@ def error msg
   abort
 end
 
-dir_config('tag', '/app/vendor/taglib/include', '/app/vendor/taglib/lib')
+find_library("tag", nil, "/app/vendor/taglib/lib")
+dir_config('tag')
 
 # When compiling statically, -lstdc++ would make the resulting .so to
 # have a dependency on an external libstdc++ instead of the static one.
@@ -19,15 +20,15 @@ unless $LDFLAGS.split(" ").include?("-static-libstdc++")
   end
 end
 
-#if not have_library('tag')
-#  error <<-DESC
-#You must have taglib installed in order to use taglib-ruby.
-#
-#Debian/Ubuntu: sudo apt-get install libtag1-dev
-#Fedora/RHEL: sudo yum install taglib-devel
-#Brew: brew install taglib
-#MacPorts: sudo port install taglib
-#DESC
-#end
+if not have_library('tag')
+  error <<-DESC
+You must have taglib installed in order to use taglib-ruby.
+
+Debian/Ubuntu: sudo apt-get install libtag1-dev
+Fedora/RHEL: sudo yum install taglib-devel
+Brew: brew install taglib
+MacPorts: sudo port install taglib
+DESC
+end
 
 $CFLAGS << " -DSWIG_TYPE_TABLE=taglib"
