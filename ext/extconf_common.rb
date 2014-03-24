@@ -11,7 +11,7 @@ end
 
 puts ENV.inspect
 puts Dir.pwd
-find_library("tag", nil, "../../taglib/lib")
+find_library("tag", nil, ENV["GEM_HOME"]+ "/../../../taglib/lib")
 dir_config('tag')
 
 # When compiling statically, -lstdc++ would make the resulting .so to
