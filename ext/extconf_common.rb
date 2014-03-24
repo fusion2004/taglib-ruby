@@ -1,5 +1,5 @@
 # Default opt dirs to help mkmf find taglib
-configure_args = "--with-opt-dir=/app/vendor:/usr/local:/opt/local:/sw "
+configure_args = "--with-opt-dir=/app/vendor/taglib:/app/vendor:/usr/local:/opt/local:/sw "
 ENV['CONFIGURE_ARGS'] = configure_args + ENV.fetch('CONFIGURE_ARGS', "")
 
 require 'mkmf'
