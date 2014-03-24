@@ -10,6 +10,7 @@ def error msg
 end
 
 puts ENV.inspect
+puts Dir.pwd
 find_library("tag", nil, "../../taglib/lib")
 dir_config('tag')
 
