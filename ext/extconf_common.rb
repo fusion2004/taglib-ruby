@@ -9,7 +9,7 @@ def error msg
   abort
 end
 
-puts ENV
+puts ENV.inspect
 find_library("tag", nil, "../../taglib/lib")
 dir_config('tag')
 
